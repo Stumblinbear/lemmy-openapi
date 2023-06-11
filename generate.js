@@ -132,7 +132,6 @@ const PATCHES = {
             }
           : {
               requestBody: {
-                required: true,
                 content: {
                   "application/json": {
                     schema: {

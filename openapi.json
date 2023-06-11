@@ -49,7 +49,6 @@
         "description": "Create your site.",
         "operationId": "createSite",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -78,7 +77,6 @@
         "description": "Edit your site.",
         "operationId": "editSite",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -109,7 +107,6 @@
         "description": "Leave the Site admins.",
         "operationId": "leaveAdmin",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -361,7 +358,6 @@
         "description": "Create a new community.",
         "operationId": "createCommunity",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -435,7 +431,6 @@
         "description": "Edit a community.",
         "operationId": "editCommunity",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -529,7 +524,6 @@
         "description": "Follow / subscribe to a community.",
         "operationId": "followCommunity",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -560,7 +554,6 @@
         "description": "Block a community.",
         "operationId": "blockCommunity",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -591,7 +584,6 @@
         "description": "Delete a community.",
         "operationId": "deleteCommunity",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -622,7 +614,6 @@
         "description": "A moderator remove for a community.",
         "operationId": "removeCommunity",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -653,7 +644,6 @@
         "description": "Transfer your community to an existing moderator.",
         "operationId": "transferCommunity",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -684,7 +674,6 @@
         "description": "Ban a user from a community.",
         "operationId": "banFromCommunity",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -715,7 +704,6 @@
         "description": "Add a moderator to your community.",
         "operationId": "addModToCommunity",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -746,7 +734,6 @@
         "description": "Create a post.",
         "operationId": "createPost",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -820,7 +807,6 @@
         "description": "Edit a post.",
         "operationId": "editPost",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -851,7 +837,6 @@
         "description": "Delete a post.",
         "operationId": "deletePost",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -882,7 +867,6 @@
         "description": "A moderator remove for a post.",
         "operationId": "removePost",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -913,7 +897,6 @@
         "description": "Mark a post as read.",
         "operationId": "markPostAsRead",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -944,7 +927,6 @@
         "description": "A moderator can lock a post ( IE disable new comments ).",
         "operationId": "lockPost",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -975,7 +957,6 @@
         "description": "A moderator can feature a community post ( IE stick it to the top of a community ).",
         "operationId": "featurePost",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1093,7 +1074,6 @@
         "description": "Like / vote on a post.",
         "operationId": "likePost",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1124,7 +1104,6 @@
         "description": "Save a post.",
         "operationId": "savePost",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1155,7 +1134,6 @@
         "description": "Report a post.",
         "operationId": "createPostReport",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1186,7 +1164,6 @@
         "description": "Resolve a post report. Only a mod can do this.",
         "operationId": "resolvePostReport",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1311,7 +1288,6 @@
         "description": "Create a comment.",
         "operationId": "createComment",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1340,7 +1316,6 @@
         "description": "Edit a comment.",
         "operationId": "editComment",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1408,7 +1383,6 @@
         "description": "Delete a comment.",
         "operationId": "deleteComment",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1439,7 +1413,6 @@
         "description": "A moderator remove for a comment.",
         "operationId": "removeComment",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1470,7 +1443,6 @@
         "description": "Mark a comment as read.",
         "operationId": "markCommentReplyAsRead",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1501,7 +1473,6 @@
         "description": "Like / vote on a comment.",
         "operationId": "likeComment",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1532,7 +1503,6 @@
         "description": "Save a comment.",
         "operationId": "saveComment",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1563,7 +1533,6 @@
         "description": "Distinguishes a comment (speak as moderator)",
         "operationId": "distinguishComment",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1705,7 +1674,6 @@
         "description": "Report a comment.",
         "operationId": "createCommentReport",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1736,7 +1704,6 @@
         "description": "Resolve a comment report. Only a mod can do this.",
         "operationId": "resolveCommentReport",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1885,7 +1852,6 @@
         "description": "Create a private message.",
         "operationId": "createPrivateMessage",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1914,7 +1880,6 @@
         "description": "Edit a private message.",
         "operationId": "editPrivateMessage",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1945,7 +1910,6 @@
         "description": "Delete a private message.",
         "operationId": "deletePrivateMessage",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -1976,7 +1940,6 @@
         "description": "Mark a private message as read.",
         "operationId": "markPrivateMessageAsRead",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2007,7 +1970,6 @@
         "description": "Create a report for a private message.",
         "operationId": "createPrivateMessageReport",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2038,7 +2000,6 @@
         "description": "Resolve a report for a private message.",
         "operationId": "resolvePrivateMessageReport",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2124,7 +2085,6 @@
         "description": "Register a new user.",
         "operationId": "register",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2155,7 +2115,6 @@
         "description": "Log into lemmy.",
         "operationId": "login",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2336,7 +2295,6 @@
         "description": "Mark a person mention as read.",
         "operationId": "markPersonMentionAsRead",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2430,7 +2388,6 @@
         "description": "Ban a person from your site.",
         "operationId": "banPerson",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2492,7 +2449,6 @@
         "description": "Block a person.",
         "operationId": "blockPerson",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2554,7 +2510,6 @@
         "description": "Delete your account.",
         "operationId": "deleteAccount",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2585,7 +2540,6 @@
         "description": "Reset your password.",
         "operationId": "passwordReset",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2616,7 +2570,6 @@
         "description": "Change your password from an email / token based reset.",
         "operationId": "passwordChangeAfterReset",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2647,7 +2600,6 @@
         "description": "Mark all replies as read.",
         "operationId": "markAllAsRead",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2678,7 +2630,6 @@
         "description": "Save your user settings.",
         "operationId": "saveUserSettings",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2709,7 +2660,6 @@
         "description": "Change your user password.",
         "operationId": "changePassword",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2810,7 +2760,6 @@
         "description": "Verify your email",
         "operationId": "verifyEmail",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2841,7 +2790,6 @@
         "description": "Add an admin to your site.",
         "operationId": "addAdmin",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2958,7 +2906,6 @@
         "description": "Approve a registration application",
         "operationId": "approveRegistrationApplication",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -2989,7 +2936,6 @@
         "description": "Purge / Delete a person from the database.",
         "operationId": "purgePerson",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -3020,7 +2966,6 @@
         "description": "Purge / Delete a community from the database.",
         "operationId": "purgeCommunity",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -3051,7 +2996,6 @@
         "description": "Purge / Delete a post from the database.",
         "operationId": "purgePost",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -3082,7 +3026,6 @@
         "description": "Purge / Delete a comment from the database.",
         "operationId": "purgeComment",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -3113,7 +3056,6 @@
         "description": "Create a new custom emoji",
         "operationId": "createCustomEmoji",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -3142,7 +3084,6 @@
         "description": "Edit an existing custom emoji",
         "operationId": "editCustomEmoji",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
@@ -3173,7 +3114,6 @@
         "description": "Delete a custom emoji",
         "operationId": "deleteCustomEmoji",
         "requestBody": {
-          "required": true,
           "content": {
             "application/json": {
               "schema": {
