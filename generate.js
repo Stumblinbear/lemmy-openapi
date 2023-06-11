@@ -42,6 +42,16 @@ const PATCHES = {
   CommunityId: {
     example: "138",
   },
+  UploadImage: {
+    properties: {
+      image: {
+        anyOf: undefined,
+        description: "The image to upload",
+        type: "string",
+        format: "byte",
+      },
+    },
+  },
 };
 
 (async () => {

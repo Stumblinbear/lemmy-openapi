@@ -7238,7 +7238,9 @@
       "UploadImage": {
         "properties": {
           "image": {
-            "anyOf": []
+            "description": "The image to upload",
+            "type": "string",
+            "format": "byte"
           },
           "auth": {
             "description": "Optional if cookie with jwt set is already present. Otherwise, auth is required.",
