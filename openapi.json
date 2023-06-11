@@ -17,7 +17,7 @@
         "tags": [
           "Site"
         ],
-        "description": "Helps build lemmy HTTP requests.",
+        "description": "Gets the site, and your user data.",
         "operationId": "getSite",
         "parameters": [
           {

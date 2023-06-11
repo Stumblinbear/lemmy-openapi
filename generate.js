@@ -90,7 +90,7 @@ const PATCHES = {
     await fs.readFile("./lemmy-js-client/src/http.ts")
   ).toString();
 
-  const matches = clientFile.matchAll(
+  const matches = clientFile.split("constructor(", 2)[1].matchAll(
     // Black magic to extract the necessary data from each of the functions
     /\/\*\*.+?\* (.+?)\n.+?`HTTP.(.+?) (.+?)`.+?\*\/.+?(\w+?)\(.+?: (.+?)\) \{.+?,(.+?)\>/gms
   );
