@@ -22,6 +22,8 @@ const OPENAPI_TEMPLATE = {
   },
 };
 
+const DATETIME_FIELDS = new Set(["when_", "published", "updated"]);
+
 const PATCHES = {
   Site: {
     properties: {
@@ -108,7 +110,7 @@ const PATCHES = {
 
     let tag = path.split("/")[1];
 
-    if (tag == "modlog") {
+    if (tag === "modlog") {
       tag = "mod";
     }
 
@@ -195,6 +197,11 @@ const PATCHES = {
         if (property["$ref"] || property.title === propertyName) {
           // No need to include a title if the property is a reference or if they're the same
           delete property.title;
+        }
+
+        if (property.type === "string" && DATETIME_FIELDS.has(propertyName)) {
+          property.type = "string";
+          property.format = "date-time";
         }
       }
     }
