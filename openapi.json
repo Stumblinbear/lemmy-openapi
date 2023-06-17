@@ -3774,6 +3774,9 @@
           },
           "child_count": {
             "type": "number"
+          },
+          "hot_rank": {
+            "type": "number"
           }
         },
         "required": [
@@ -3783,7 +3786,8 @@
           "upvotes",
           "downvotes",
           "published",
-          "child_count"
+          "child_count",
+          "hot_rank"
         ],
         "additionalProperties": false,
         "title": "CommentAggregates",
@@ -4189,6 +4193,9 @@
           },
           "users_active_half_year": {
             "type": "number"
+          },
+          "hot_rank": {
+            "type": "number"
           }
         },
         "required": [
@@ -4201,7 +4208,8 @@
           "users_active_day",
           "users_active_week",
           "users_active_month",
-          "users_active_half_year"
+          "users_active_half_year",
+          "hot_rank"
         ],
         "additionalProperties": false,
         "title": "CommunityAggregates",
@@ -5434,9 +5442,6 @@
             },
             "type": "array"
           },
-          "online": {
-            "type": "number"
-          },
           "discussion_languages": {
             "items": {
               "$ref": "#/components/schemas/LanguageId"
@@ -5447,7 +5452,6 @@
         "required": [
           "community_view",
           "moderators",
-          "online",
           "discussion_languages"
         ],
         "additionalProperties": false,
@@ -5647,17 +5651,13 @@
               "$ref": "#/components/schemas/PostView"
             },
             "type": "array"
-          },
-          "online": {
-            "type": "number"
           }
         },
         "required": [
           "post_view",
           "community_view",
           "moderators",
-          "cross_posts",
-          "online"
+          "cross_posts"
         ],
         "additionalProperties": false,
         "title": "GetPostResponse",
@@ -5742,9 +5742,6 @@
             },
             "type": "array"
           },
-          "online": {
-            "type": "number"
-          },
           "version": {
             "type": "string"
           },
@@ -5779,7 +5776,6 @@
         "required": [
           "site_view",
           "admins",
-          "online",
           "version",
           "all_languages",
           "discussion_languages",
@@ -6064,9 +6060,6 @@
           "federation_enabled": {
             "type": "boolean"
           },
-          "federation_debug": {
-            "type": "boolean"
-          },
           "federation_worker_count": {
             "type": "number"
           },
@@ -6106,7 +6099,6 @@
           "application_email_admins",
           "actor_name_max_length",
           "federation_enabled",
-          "federation_debug",
           "federation_worker_count",
           "captcha_enabled",
           "captcha_difficulty",
@@ -7681,6 +7673,12 @@
           },
           "featured_local": {
             "type": "boolean"
+          },
+          "hot_rank": {
+            "type": "number"
+          },
+          "hot_rank_active": {
+            "type": "number"
           }
         },
         "required": [
@@ -7694,7 +7692,9 @@
           "newest_comment_time_necro",
           "newest_comment_time",
           "featured_community",
-          "featured_local"
+          "featured_local",
+          "hot_rank",
+          "hot_rank_active"
         ],
         "additionalProperties": false,
         "title": "PostAggregates",
