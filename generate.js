@@ -18,39 +18,111 @@ const OPENAPI_TEMPLATE = {
   paths: {},
   components: {
     parameters: {},
-    schemas: {},
+    schemas: {
+      AuthToken: {
+        title: "AuthToken",
+        type: "string",
+      },
+      SiteActorId: {
+        title: "SiteActorId",
+        type: "string",
+      },
+      CommunityActorId: {
+        title: "CommunityActorId",
+        type: "string",
+      },
+      PersonActorId: {
+        title: "PersonActorId",
+        type: "string",
+      },
+      Error: {
+        title: "Error",
+        type: "object",
+        properties: {
+          error: {
+            type: "string",
+          },
+        },
+      },
+    },
   },
 };
 
 const DATETIME_FIELDS = new Set(["when_", "published", "updated"]);
 
 const PATCHES = {
-  Site: {
-    properties: {
-      name: {
-        example: "Lemmy Site",
+  components: {
+    schemas: {
+      Site: {
+        properties: {
+          actor_id: {
+            $ref: "#/components/schemas/SiteActorId",
+          },
+          name: {
+            example: "Lemmy Site",
+          },
+          description: {
+            example: "I'm a site",
+          },
+          private_key: {
+            example: "weee",
+          },
+          public_key: {
+            example: "wooo",
+          },
+        },
       },
-      description: {
-        example: "I'm a site",
+      Community: {
+        properties: {
+          actor_id: {
+            $ref: "#/components/schemas/CommunityActorId",
+          },
+        },
       },
-      private_key: {
-        example: "weee",
+      Person: {
+        properties: {
+          actor_id: {
+            $ref: "#/components/schemas/PersonActorId",
+          },
+        },
       },
-      public_key: {
-        example: "wooo",
+      UploadImage: {
+        properties: {
+          image: {
+            anyOf: undefined,
+            description: "The image to upload",
+            type: "string",
+            format: "byte",
+          },
+        },
       },
     },
   },
-  CommunityId: {
-    example: "138",
-  },
-  UploadImage: {
-    properties: {
-      image: {
-        anyOf: undefined,
-        description: "The image to upload",
-        type: "string",
-        format: "byte",
+  paths: {
+    "/user/login": {
+      post: {
+        responses: {
+          400: {
+            description: "Invalid login",
+            content: {
+              "application/json": {
+                schema: {
+                  $ref: "#/components/schemas/Error",
+                },
+              },
+            },
+          },
+          404: {
+            description: "Not found",
+            content: {
+              "application/json": {
+                schema: {
+                  $ref: "#/components/schemas/Error",
+                },
+              },
+            },
+          },
+        },
       },
     },
   },
@@ -194,6 +266,12 @@ const PATCHES = {
         // Property titles are generated with the schema name as a prefix, which we don't want
         property.title = propertyName.replace(`${schemaName}.`, "");
 
+        if (propertyName === "auth" || propertyName === "jwt") {
+          delete property.type;
+
+          property["$ref"] = "#/components/schemas/AuthToken";
+        }
+
         if (property["$ref"] || property.title === propertyName) {
           // No need to include a title if the property is a reference or if they're the same
           delete property.title;
@@ -228,10 +306,10 @@ const PATCHES = {
     openapiSpec.components.schemas[schemaName] = schema;
   }
 
-  const patches = structuredClone(PATCHES);
-
-  // Apply patches
-  for (const [schemaName, patch] of Object.entries(patches)) {
+  // Apply schema patches
+  for (const [schemaName, patch] of Object.entries(
+    PATCHES.components.schemas
+  )) {
     const { title, example, properties } = patch;
 
     const schemaSpec = openapiSpec.components.schemas[schemaName];
@@ -247,11 +325,27 @@ const PATCHES = {
 
     if (properties) {
       for (const [propertyName, propertyPatch] of Object.entries(properties)) {
-        schemaSpec.properties[propertyName] = {
-          ...schemaSpec.properties[propertyName],
-          ...propertyPatch,
-        };
+        if (propertyPatch["$ref"]) {
+          schemaSpec.properties[propertyName] = propertyPatch;
+        } else {
+          schemaSpec.properties[propertyName] = {
+            ...schemaSpec.properties[propertyName],
+            ...propertyPatch,
+          };
+        }
       }
+    }
+  }
+
+  // Apply path patches
+  for (const [path, patchMethods] of Object.entries(PATCHES.paths)) {
+    for (const [method, methodPatch] of Object.entries(patchMethods)) {
+      const methodSpec = openapiSpec.paths[path][method];
+
+      methodSpec.responses = {
+        ...methodSpec.responses,
+        ...(methodPatch.responses ?? {}),
+      };
     }
   }
 

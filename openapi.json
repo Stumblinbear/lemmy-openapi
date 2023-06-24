@@ -25,7 +25,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -190,7 +190,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -293,7 +293,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -332,7 +332,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -407,7 +407,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -498,7 +498,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -783,7 +783,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -1048,7 +1048,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -1231,7 +1231,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -1357,7 +1357,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -1648,7 +1648,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -1771,7 +1771,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -1826,7 +1826,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -2059,7 +2059,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -2130,6 +2130,26 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/LoginResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid login",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
@@ -2206,7 +2226,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -2269,7 +2289,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -2362,7 +2382,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -2423,7 +2443,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -2484,7 +2504,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -2703,7 +2723,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -2734,7 +2754,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -2825,7 +2845,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -2880,7 +2900,7 @@
             "name": "auth",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -3149,7 +3169,7 @@
             "name": "auth",
             "required": false,
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/AuthToken"
             }
           }
         ],
@@ -3171,6 +3191,31 @@
   "components": {
     "parameters": {},
     "schemas": {
+      "AuthToken": {
+        "title": "AuthToken",
+        "type": "string"
+      },
+      "SiteActorId": {
+        "title": "SiteActorId",
+        "type": "string"
+      },
+      "CommunityActorId": {
+        "title": "CommunityActorId",
+        "type": "string"
+      },
+      "PersonActorId": {
+        "title": "PersonActorId",
+        "type": "string"
+      },
+      "Error": {
+        "title": "Error",
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          }
+        }
+      },
       "AddAdmin": {
         "properties": {
           "person_id": {
@@ -3180,7 +3225,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -3220,7 +3265,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -3441,7 +3486,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -3474,7 +3519,7 @@
             "type": "number"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -3538,7 +3583,7 @@
             "type": "number"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -3576,7 +3621,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -3614,7 +3659,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -3676,7 +3721,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4122,7 +4167,7 @@
             "type": "boolean"
           },
           "actor_id": {
-            "type": "string"
+            "$ref": "#/components/schemas/CommunityActorId"
           },
           "local": {
             "type": "boolean"
@@ -4255,8 +4300,7 @@
       },
       "CommunityId": {
         "title": "CommunityId",
-        "type": "number",
-        "example": "138"
+        "type": "number"
       },
       "CommunityJoin": {
         "properties": {
@@ -4364,7 +4408,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4385,7 +4429,7 @@
             "type": "number"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4406,7 +4450,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4448,7 +4492,7 @@
             "type": "array"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4481,7 +4525,7 @@
             "type": "array"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4520,7 +4564,7 @@
             "$ref": "#/components/schemas/LanguageId"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4541,7 +4585,7 @@
             "type": "number"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4562,7 +4606,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4583,7 +4627,7 @@
             "$ref": "#/components/schemas/PersonId"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4604,7 +4648,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4751,7 +4795,7 @@
             "$ref": "#/components/schemas/RegistrationMode"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4868,7 +4912,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4892,7 +4936,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4913,7 +4957,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4931,7 +4975,7 @@
             "$ref": "#/components/schemas/CustomEmojiId"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4968,7 +5012,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -4989,7 +5033,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5010,7 +5054,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5037,7 +5081,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5078,7 +5122,7 @@
             "type": "array"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5110,7 +5154,7 @@
             "type": "array"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5146,7 +5190,7 @@
             "$ref": "#/components/schemas/LanguageId"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5166,7 +5210,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5316,7 +5360,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5338,7 +5382,7 @@
             "$ref": "#/components/schemas/PostFeatureType"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5390,7 +5434,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5832,7 +5876,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -5908,7 +5952,7 @@
       "LeaveAdmin": {
         "properties": {
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -6301,7 +6345,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -6336,7 +6380,7 @@
       "LoginResponse": {
         "properties": {
           "jwt": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           },
           "registration_created": {
             "type": "boolean"
@@ -6356,7 +6400,7 @@
       "MarkAllAsRead": {
         "properties": {
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -6375,7 +6419,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -6396,7 +6440,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -6417,7 +6461,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -6438,7 +6482,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -7208,7 +7252,7 @@
           },
           "auth": {
             "description": "Optional if cookie with jwt set is already present. Otherwise, auth is required.",
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -7326,7 +7370,7 @@
             "format": "date-time"
           },
           "actor_id": {
-            "type": "string"
+            "$ref": "#/components/schemas/PersonActorId"
           },
           "bio": {
             "type": "string"
@@ -8150,7 +8194,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8170,7 +8214,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8203,7 +8247,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8223,7 +8267,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8364,7 +8408,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8391,7 +8435,7 @@
             "type": "number"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8415,7 +8459,7 @@
             "type": "string"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8436,7 +8480,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8476,7 +8520,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8497,7 +8541,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8518,7 +8562,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8539,7 +8583,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8617,7 +8661,7 @@
             "type": "boolean"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8711,7 +8755,7 @@
             "example": "I'm a site"
           },
           "actor_id": {
-            "type": "string"
+            "$ref": "#/components/schemas/SiteActorId"
           },
           "last_refreshed_at": {
             "type": "string"
@@ -8927,7 +8971,7 @@
             "$ref": "#/components/schemas/PersonId"
           },
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
@@ -8942,7 +8986,7 @@
       "UserJoin": {
         "properties": {
           "auth": {
-            "type": "string"
+            "$ref": "#/components/schemas/AuthToken"
           }
         },
         "required": [
