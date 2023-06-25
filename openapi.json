@@ -3207,6 +3207,18 @@
         "title": "PersonActorId",
         "type": "string"
       },
+      "PostActivityPubId": {
+        "title": "PersonActivityPubId",
+        "type": "string"
+      },
+      "CommentActivityPubId": {
+        "title": "CommentActivityPubId",
+        "type": "string"
+      },
+      "PrivateMessageActivityPubId": {
+        "title": "PrivateMessageActivityPubId",
+        "type": "string"
+      },
       "Error": {
         "title": "Error",
         "type": "object",
@@ -3763,7 +3775,7 @@
             "type": "boolean"
           },
           "ap_id": {
-            "type": "string"
+            "$ref": "#/components/schemas/CommentActivityPubId"
           },
           "local": {
             "type": "boolean"
@@ -7644,7 +7656,7 @@
             "type": "string"
           },
           "ap_id": {
-            "type": "string"
+            "$ref": "#/components/schemas/PostActivityPubId"
           },
           "local": {
             "type": "boolean"
@@ -8020,7 +8032,7 @@
             "format": "date-time"
           },
           "ap_id": {
-            "type": "string"
+            "$ref": "#/components/schemas/PrivateMessageActivityPubId"
           },
           "local": {
             "type": "boolean"

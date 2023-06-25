@@ -35,6 +35,18 @@ const OPENAPI_TEMPLATE = {
         title: "PersonActorId",
         type: "string",
       },
+      PostActivityPubId: {
+        title: "PersonActivityPubId",
+        type: "string",
+      },
+      CommentActivityPubId: {
+        title: "CommentActivityPubId",
+        type: "string",
+      },
+      PrivateMessageActivityPubId: {
+        title: "PrivateMessageActivityPubId",
+        type: "string",
+      },
       Error: {
         title: "Error",
         type: "object",
@@ -83,6 +95,27 @@ const PATCHES = {
         properties: {
           actor_id: {
             $ref: "#/components/schemas/PersonActorId",
+          },
+        },
+      },
+      Post: {
+        properties: {
+          ap_id: {
+            $ref: "#/components/schemas/PostActivityPubId",
+          },
+        },
+      },
+      Comment: {
+        properties: {
+          ap_id: {
+            $ref: "#/components/schemas/CommentActivityPubId",
+          },
+        },
+      },
+      PrivateMessage: {
+        properties: {
+          ap_id: {
+            $ref: "#/components/schemas/PrivateMessageActivityPubId",
           },
         },
       },
